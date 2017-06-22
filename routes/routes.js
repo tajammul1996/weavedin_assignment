@@ -7,4 +7,7 @@ var controllers = require('.././controllers');
 /* GET home page. */
 router.get('/', controllers.homecontroller.index);
 
+/*Routes for task*/
+router.get('/task', controllers.taskscontroller.task);
+
 module.exports = router;

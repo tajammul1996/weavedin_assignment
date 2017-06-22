@@ -1,0 +1,11 @@
+extends ../default
+
+block content
+
+  include ../templates/nav
+  
+  div(class=['ui', 'container', 'grid', 'stackable'])
+    div(class=['sixteen', 'wide', 'column'])
+      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Enter the task' 
+
+      p= task[1].ID
