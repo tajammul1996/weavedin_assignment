@@ -1,5 +1,9 @@
-extends layout
+extends default
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  include templates/nav
+  
+  div(class=['ui', 'container', 'grid', 'stackable'])
+    div(class=['sixteen', 'wide', 'column'])
+      h3(class=['ui', 'header', 'blue'])= 'New Simple Task Manager with CRUD' 
