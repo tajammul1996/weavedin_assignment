@@ -6,6 +6,19 @@ block content
   
   div(class=['ui', 'container', 'grid', 'stackable'])
     div(class=['sixteen', 'wide', 'column'])
-      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Enter the task' 
+      h2(class=['ui', 'header', 'blue', 'dividing'])= 'SIMPLE TASK MANAGER' 
 
-      p= task[1].ID
+      table(class=['ui', 'table', 'celled'] id='tbl-task')
+        thead
+          tr
+            th= 'ID'
+            th= 'Category'
+            th= 'Task' 
+            th= 'Action'
+        tbody
+          each i in task
+            tr
+              td= i.ID
+              td= i.Category
+              td= i.Task
+              td= 'Remove/Modify'
