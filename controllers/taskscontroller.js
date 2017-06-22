@@ -42,5 +42,14 @@ module.exports = {
 
 		}); 
 
+	},
+
+	//function to create a new task or event
+	newTask : function(req, res, next){
+		res.render('task/new');
+	},
+
+	postTask : function(req, res, next) {
+		console.log(req.body);
 	}
 }

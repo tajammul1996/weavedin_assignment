@@ -14,6 +14,7 @@ block content
             th= 'ID'
             th= 'Category'
             th= 'Task' 
+            th= 'Date/Time'
             th= 'Action'
         tbody
           each i in task
@@ -21,4 +22,5 @@ block content
               td= i.ID
               td= i.Category
               td= i.Task
+              td= i.date
               td= 'Remove/Modify'

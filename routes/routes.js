@@ -9,5 +9,6 @@ router.get('/', controllers.homecontroller.index);
 
 /*Routes for task*/
 router.get('/task', controllers.taskscontroller.task);
-
+router.get('/new', controllers.taskscontroller.newTask);
+router.post('/add', controllers.taskscontroller.postTask);
 module.exports = router;

@@ -1,0 +1,22 @@
+extends ../default
+
+block content
+
+  include ../templates/nav
+  
+  div(class=['ui', 'container', 'grid', 'stackable'])
+    div(class=['sixteen', 'wide', 'column'])
+      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Create New Task' 
+
+      div(class=['form-newtask'])
+        form(class=['ui', 'form'] action='http://localhost:3000/add' method='post')
+          div(class=['ui', 'field'])
+            label(for='Category')= 'Category of task'
+            input(type= 'text' name='Category' placeholder='Ex: Business, Entertainment') 
+          div(class=['ui', 'field'])
+            label(for='Task')= 'Actual Task'
+            input(type= 'text' name='Task' placeholder='Ex: Schedule Online Meeting')
+          button(class=['ui', 'button', 'basic', 'black'])= 'Add Task' 
+          div(class=['ui', 'message', 'error'])
+
+  script(src='./javascripts/validation.js')
