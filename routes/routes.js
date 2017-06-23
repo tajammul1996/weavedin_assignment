@@ -11,4 +11,5 @@ router.get('/', controllers.homecontroller.index);
 router.get('/task', controllers.taskscontroller.task);
 router.get('/new', controllers.taskscontroller.newTask);
 router.post('/add', controllers.taskscontroller.postTask);
+router.post('/taskcompleted', controllers.taskscontroller.taskcomplete);
 module.exports = router;

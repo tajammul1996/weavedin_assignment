@@ -13,14 +13,19 @@ block content
           tr
             th= 'ID'
             th= 'Category'
-            th= 'Task' 
-            th= 'Date/Time'
+            th= 'Task'
             th= 'Action'
         tbody
           each i in task
             tr
-              td= i.ID
+              td(id='taskID')= i.ID
               td= i.Category
               td= i.Task
-              td= i.date
-              td= 'Remove/Modify'
+              td
+                a(class=['ui button basic icon'] id='btn-complete' href='#' data-inverted='' data-tooltip='Completed' data-position='top center')
+                  i(class=['checkmark icon'])
+
+                a(class=['ui button basic icon'] href='#' data-inverted='' data-tooltip='Edit' data-position='top center')
+                  i(class=['cut icon'])
+
+  script(src = '/javascripts/tasks.js')

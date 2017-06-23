@@ -18,5 +18,11 @@ block content
             input(type= 'text' name='Task' placeholder='Ex: Schedule Online Meeting')
           button(class=['ui', 'button', 'basic', 'black'])= 'Add Task' 
           div(class=['ui', 'message', 'error'])
+      if info != undefined
+        div(class= ['ui', 'message', 'success'])
+          i(class= ['close', 'icon'])
+          div(class= 'header')= 'Task Enrolled'
+          p= info
+
 
   script(src='./javascripts/validation.js')
