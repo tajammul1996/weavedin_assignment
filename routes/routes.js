@@ -12,4 +12,8 @@ router.get('/task', controllers.taskscontroller.task);
 router.get('/new', controllers.taskscontroller.newTask);
 router.post('/add', controllers.taskscontroller.postTask);
 router.post('/taskcompleted', controllers.taskscontroller.taskcomplete);
+router.get('/taskmodify/:id', controllers.taskscontroller.modifytask);
+router.post('/edit', controllers.taskscontroller.postModification);
+
+
 module.exports = router;

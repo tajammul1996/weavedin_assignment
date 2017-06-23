@@ -1,0 +1,24 @@
+extends ../default
+
+block content
+
+  include ../templates/nav
+  
+  div(class=['ui', 'container', 'grid', 'stackable'])
+    div(class=['sixteen', 'wide', 'column'])
+      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Modify the existing task' 
+
+      div(class=['form-newtask'])
+        form(class=['ui', 'form'] action='http://localhost:3000/edit' method='post')
+          div(class=['ui', 'field'])
+            label(for='Category')= 'Category of task'
+            input(type= 'text' name='Category' placeholder='Ex: Business, Entertainment' value=task[0].Category) 
+          div(class=['ui', 'field'])
+            label(for='Task')= 'Actual Task'
+            input(type= 'text' name='Task' placeholder='Ex: Schedule Online Meeting' value=task[0].Task)
+            input(type= 'hidden' name='ID' value=task[0].ID)
+          button(class=['ui', 'button', 'basic', 'black'])= 'Modify Task' 
+          div(class=['ui', 'message', 'error'])
+
+
+  script(src='./javascripts/validation.js')

@@ -92,5 +92,52 @@ module.exports = {
 			response.res = true;
 			res.json(response);
 		});
+	},
+
+	//function used to modify the existing task
+	modifytask : function(req, res, next){
+		var id = req.params.id;
+		console.log(id);
+		var config = require('.././database/config');
+		var db = mysql.createConnection(config);
+		db.connect(function(error){
+			if(!!error){
+				console.log('Error');
+			}else{
+				console.log('connected');
+			}
+		});
+
+		var task=null;
+		db.query('SELECT * FROM tasks WHERE ID = ?', id, function(error, rows, fields){
+			if(error) throw error;
+
+			task = rows;
+			db.end();
+
+			res.render('task/modify', {task: task});
+		});
+	},
+
+	//After modification, the file is up
+	postModification : function(req, res, next){
+		var task = {
+			Category : req.body.Category,
+			Task : req.body.Task
+		};
+		var config = require('.././database/config');
+		var db = mysql.createConnection(config);
+		db.connect(function(error){
+			if(!!error){
+				console.log('Error');
+			}else{
+				console.log('connected');
+			}
+		});
+		db.query('UPDATE tasks SET ? WHERE ?', [task, {ID : req.body.ID}], function(err, rows, fields){
+			if(err) throw err;
+			db.end();
+		});
+		res.redirect('/task');
 	}
-}
+}	
